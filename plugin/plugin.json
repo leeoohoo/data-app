@@ -1,0 +1,43 @@
+{
+  "manifestVersion": 1,
+  "id": "data-app",
+  "name": "Database Client",
+  "version": "0.1.0",
+  "description": "数据库连接管理客户端",
+  "backend": {
+    "entry": "backend/index.bundle.mjs"
+  },
+  "apps": [
+    {
+      "id": "data-app",
+      "name": "Database Client",
+      "description": "数据库连接管理客户端",
+      "entry": {
+        "type": "module",
+        "path": "apps/data-app/index.mjs",
+        "compact": {
+          "type": "module",
+          "path": "apps/data-app/compact.mjs"
+        }
+      },
+      "ai": {
+        "mcp": {
+          "entry": "apps/data-app/mcp-server.bundle.mjs",
+          "command": "node",
+          "allowMain": true,
+          "allowSub": true,
+          "callMeta": {
+            "workdir": "$dataDir"
+          }
+        },
+        "mcpPrompt": {
+          "title": "Database Client · MCP Prompt",
+          "zh": "apps/data-app/mcp-prompt.zh.md",
+          "en": "apps/data-app/mcp-prompt.en.md"
+        },
+        "mcpServers": ["data-app.data-app"],
+        "prompts": ["mcp_data-app_data-app", "mcp_data-app_data-app__en"]
+      }
+    }
+  ]
+}
