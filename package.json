@@ -1,0 +1,21 @@
+{
+  "name": "data-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run bundle && chatos-uiapp dev",
+    "validate": "chatos-uiapp validate",
+    "bundle": "node scripts/bundle.mjs",
+    "pack": "npm run bundle && chatos-uiapp pack",
+    "install:chatos": "npm run bundle && chatos-uiapp install --host-app chatos",
+    "test:mcp": "node test-mcp-tools.mjs"
+  },
+  "devDependencies": {
+    "@leeoohoo/ui-apps-devkit": "^0.1.4",
+    "esbuild": "^0.20.2"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0",
+    "mysql2": "^3.16.1"
+  }
+}
